@@ -44,7 +44,7 @@ téléchargement et installation du paquet NGINX
 
 ## controle du service 
 
-`root@debian:~# `
+![1699908016431](image/install_server_nginx/1699908016431.png)
 
 votre service nginx apparait avec le sigle + ( service en cours de fonctionnement )
 
@@ -54,50 +54,9 @@ les fichiers de configuration se trouvent dan le dossier /etc/nginx
 
 voici  l'arborescence
 
-`root@debian:/etc/nginx# tree
-.
-├── conf.d
-├── fastcgi.conf
-├── fastcgi_params
-├── koi-utf
-├── koi-win
-├── mime.types
-├── modules-available
-├── modules-enabled
-├── nginx.conf
-├── proxy_params
-├── scgi_params
-├── sites-available
-│   └── default
-├── sites-enabled
-│   └── default -> /etc/nginx/sites-available/default
-├── snippets
-│   ├── fastcgi-php.conf
-│   └── snakeoil.conf
-├── uwsgi_params
-└── win-utf`
+![1699907949051](image/install_server_nginx/1699907949051.png)
 
-`root@debian:/etc/nginx# ls -l
-total 68
-drwxr-xr-x  2 root root 4096 14 mars   2023 conf.d
--rw-r--r--   1 root root 1125 14 mars    2023 fastcgi.conf
--rw-r--r--   1 root root 1055 14 mars    2023 fastcgi_params
--rw-r--r--   1 root root 2837 14 mars    2023 koi-utf
--rw-r--r--   1 root root 2223 14 mars    2023 koi-win
--rw-r--r--   1 root root 4338 14 mars    2023 mime.types
-drwxr-xr-x 2 root root 4096  14 mars  2023 modules-available
-drwxr-xr-x 2  root root 4096 14 mars  2023 modules-enabled
--rw-r--r--   1 root root 1446  14 mars   2023 nginx.conf
--rw-r--r--   1 root root  180   14 mars    2023 proxy_params
--rw-r--r--   1 root root  636   14 mars    2023 scgi_params
-drwxr-xr-x 2  root root 4096  9 oct.   11:35 sites-available
-drwxr-xr-x 2  root root 4096  2 oct.  16:49 sites-enabled
-drwxr-xr-x 2  root root 4096  2 oct.  16:49 snippets
--rw-r--r--  1  root root  664 14 mars   2023 uwsgi_params
--rw-r--r--  1  root root 3071 14 mars   2023 win-utf`
-
-
-voici un point sur les principaux fichiers 
+voici un point sur les principaux fichiers
 
 Le répertoire `/etc/nginx/conf.d` sous Nginx est généralement utilisé pour stocker des fichiers de configuration supplémentaires. Ces fichiers contiennent des configurations spécifiques à des sites, applications ou services particuliers, et sont inclus dans la configuration principale du serveur Nginx. En d'autres termes, plutôt que de mettre toutes les configurations dans le fichier principal `nginx.conf`, vous pouvez les organiser en fichiers distincts dans le répertoire `/etc/nginx/conf.d`. Cela facilite la gestion et la modularité de la configuration, surtout lorsque vous avez plusieurs sites ou services à gérer.
 
@@ -123,18 +82,6 @@ dynamiquement lors de l'exécution. Les modules Nginx couvrent une gamme de fonc
 ## les fichiers de logs
 
 les fichiers de logs se trouvent dans le dosier /var/etc/nginx
-
-`root@debian:/var/log/nginx# ls -l
-total 76
--rw-r----- 1 www-data adm     0 13 nov.  21:03 access.log
--rw-r----- 1 www-data adm 37374 10 oct.  12:47 access.log.1
--rw-r----- 1 www-data adm  1627  9 oct.  11:53 access.log.2.gz
--rw-r----- 1 www-data adm  1196  5 oct.  16:57 access.log.3.gz
--rw-r----- 1 www-data adm     0 13 nov.  21:03 error.log
--rw-r----- 1 www-data adm 15539 10 oct.  11:53 error.log.1
--rw-r----- 1 www-data adm   458  9 oct.  11:50 error.log.2.gz
--rw-r----- 1 www-data adm    93  2 oct.  16:49 error.log.3.gz
-root@debian:/var/log/nginx#`
 
 on retrouve ce paramétre dans le fichier nginx.conf ![1699906979662](image/install_server_nginx/1699906979662.png)
 
