@@ -44,26 +44,7 @@ téléchargement et installation du paquet NGINX
 
 ## controle du service 
 
-root@debian:~# ***service --status-all***
- [ + ]  anacron
- [ - ]  apache-htcacheclean
- [ - ]  apache2
- [ + ]  apparmor
- [ - ]  bluetooth
- [ - ]  console-setup.sh
- [ + ]  cron
- [ + ]  dbus
- [ - ]  hwclock.sh
- [ - ]  keyboard-setup.sh
- [ + ]  kmod
- [ + ]  mariadb
- [ + ]  networking
- [ + ]  nginx
- [ + ]  php8.2-fpm
- [ + ]  procps
- [ - ]  rsync
- [ + ]  ssh
- [ + ]  udev
+`root@debian:~# `
 
 votre service nginx apparait avec le sigle + ( service en cours de fonctionnement )
 
@@ -73,7 +54,7 @@ les fichiers de configuration se trouvent dan le dossier /etc/nginx
 
 voici  l'arborescence
 
-root@debian:/etc/nginx# tree
+`root@debian:/etc/nginx# tree
 .
 ├── conf.d
 ├── fastcgi.conf
@@ -94,9 +75,9 @@ root@debian:/etc/nginx# tree
 │   ├── fastcgi-php.conf
 │   └── snakeoil.conf
 ├── uwsgi_params
-└── win-utf
+└── win-utf`
 
-root@debian:/etc/nginx# ls -l
+`root@debian:/etc/nginx# ls -l
 total 68
 drwxr-xr-x  2 root root 4096 14 mars   2023 conf.d
 -rw-r--r--   1 root root 1125 14 mars    2023 fastcgi.conf
@@ -113,7 +94,7 @@ drwxr-xr-x 2  root root 4096  9 oct.   11:35 sites-available
 drwxr-xr-x 2  root root 4096  2 oct.  16:49 sites-enabled
 drwxr-xr-x 2  root root 4096  2 oct.  16:49 snippets
 -rw-r--r--  1  root root  664 14 mars   2023 uwsgi_params
--rw-r--r--  1  root root 3071 14 mars   2023 win-utf
+-rw-r--r--  1  root root 3071 14 mars   2023 win-utf`
 
 
 voici un point sur les principaux fichiers 
@@ -143,7 +124,7 @@ dynamiquement lors de l'exécution. Les modules Nginx couvrent une gamme de fonc
 
 les fichiers de logs se trouvent dans le dosier /var/etc/nginx
 
-root@debian:/var/log/nginx# ls -l
+`root@debian:/var/log/nginx# ls -l
 total 76
 -rw-r----- 1 www-data adm     0 13 nov.  21:03 access.log
 -rw-r----- 1 www-data adm 37374 10 oct.  12:47 access.log.1
@@ -153,7 +134,7 @@ total 76
 -rw-r----- 1 www-data adm 15539 10 oct.  11:53 error.log.1
 -rw-r----- 1 www-data adm   458  9 oct.  11:50 error.log.2.gz
 -rw-r----- 1 www-data adm    93  2 oct.  16:49 error.log.3.gz
-root@debian:/var/log/nginx#
+root@debian:/var/log/nginx#`
 
 on retrouve ce paramétre dans le fichier nginx.conf ![1699906979662](image/install_server_nginx/1699906979662.png)
 
